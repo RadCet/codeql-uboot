@@ -37,4 +37,4 @@ class Config extends TaintTracking::Configuration{
 
 from Config c, DataFlow::PathNode source, DataFlow::PathNode sink
 where c.hasFlowPath(source, sink)
-select source,sink
+select sink, source, sink, "Network byte swap flows to memcpy"
